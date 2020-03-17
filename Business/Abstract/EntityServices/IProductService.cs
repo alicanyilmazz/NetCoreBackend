@@ -1,10 +1,8 @@
-﻿using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Core.Utilities.Results;
+using Entities.Concrete;
 
-namespace Business.Abstract
+namespace Business.Abstract.EntityServices
 {
     public interface IProductService
     {

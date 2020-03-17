@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Entities
+namespace Business.DependencyResolvers.Ninject
 {
-    public interface IEntity
+    class NinjectBusinessModule
     {
     }
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Business.Abstract;
+using Business.Abstract.EntityServices;
 using Business.Contants.ResultContants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
-namespace Business.Concrete
+namespace Business.Concrete.EntityManagers
 {
     public class ProductManager : IProductService
     {
@@ -21,7 +19,7 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int productId)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == productId));
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
         public IDataResult<List<Product>> GetList()
