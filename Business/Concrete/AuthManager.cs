@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Business.Abstract;
+﻿using Business.Abstract;
 using Business.Abstract.EntityServices;
 using Business.Contants.ResultContants;
 using Core.Entities.Concrete;

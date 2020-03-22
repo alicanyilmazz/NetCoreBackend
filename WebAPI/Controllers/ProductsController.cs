@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Business.Abstract;
-using Business.Abstract.EntityServices;
+﻿using Business.Abstract.EntityServices;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -94,6 +88,18 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+
+        [HttpPost("transaction")]
+        public IActionResult TransactionTest(Product product)
+        {
+            var result = _productService.TransactionalOperation(product);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+
+            return BadRequest(result.Message);
+        }
 
     }
 }

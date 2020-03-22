@@ -12,6 +12,7 @@ namespace Business.Abstract.EntityServices
         IResult Add(Product product);
         IResult Delete(Product product);
         IResult Update(Product product);
+        IResult TransactionalOperation(Product product);
 
     }
 }

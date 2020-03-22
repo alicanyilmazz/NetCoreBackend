@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Business.Contants.ResultContants
+﻿namespace Business.Contants.ResultContants
 {
     public static class ResultMessages
     {
@@ -31,6 +27,9 @@ namespace Business.Contants.ResultContants
         public static string UserRegistered = "User registered.";
 
         public static string AccessTokenCreated = "Access token created.";
+
+        public static string TransactionIsSuccessful = "Transaction is successful.";
+        public static string TransactionError = "Transaction gave an error.";
 
 
     }
