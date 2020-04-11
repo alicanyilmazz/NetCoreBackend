@@ -31,6 +31,8 @@
         public static string TransactionIsSuccessful = "Transaction is successful.";
         public static string TransactionError = "Transaction gave an error.";
 
+        public static string AuthorizationDenied = "Authorization denied.";
+
 
     }
 }

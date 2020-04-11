@@ -1,0 +1,58 @@
+{
+  "Message": {
+    "MethodName": "GetListByCategory",
+    "LogParameters": [
+      {
+        "Name": "categoryId",
+        "Value": 2,
+        "Type": "Int32"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "GetListByCategory",
+    "LogParameters": [
+      {
+        "Name": "categoryId",
+        "Value": 8,
+        "Type": "Int32"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AMMAR",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "GetListByCategory",
+    "LogParameters": [
+      {
+        "Name": "categoryId",
+        "Value": 1,
+        "Type": "Int32"
+      }
+    ]
+  }
+}
