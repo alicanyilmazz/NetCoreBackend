@@ -1,26 +1,30 @@
 {
   "Message": {
-    "MethodName": "GetListByCategory",
-    "LogParameters": [
-      {
-        "Name": "categoryId",
-        "Value": 2,
-        "Type": "Int32"
-      }
-    ]
-  }
-}
-{
-  "Message": {
     "FullName": "IProductService",
     "MethodName": "GetListByCategory",
     "LogParameters": [
       {
         "Name": "categoryId",
-        "Value": 8,
+        "Value": 3,
         "Type": "Int32"
       }
-    ]
+    ],
+    "DateTime": "15/04/2020 16:09:47"
+  }
+}
+{
+  "Message": {
+    "ExceptionMessage": "Cannot open database \"Northwind\" requested by the login. The login failed.\r\nLogin failed for user 'MicrosoftAccount\\ali_ylmz03@hotmail.com'.",
+    "FullName": "IProductService",
+    "MethodName": "GetListByCategory",
+    "LogParameters": [
+      {
+        "Name": "categoryId",
+        "Value": 3,
+        "Type": "Int32"
+      }
+    ],
+    "DateTime": "15/04/2020 16:09:58"
   }
 }
 {
@@ -32,7 +36,7 @@
         "Name": "product",
         "Value": {
           "ProductId": 0,
-          "ProductName": "AMMAR",
+          "ProductName": "AKURA",
           "CategoryId": 1,
           "QuantityPerUnit": null,
           "UnitPrice": 100.0,
@@ -40,19 +44,176 @@
         },
         "Type": "Product"
       }
-    ]
+    ],
+    "DateTime": "16/04/2020 21:56:14"
   }
 }
 {
   "Message": {
     "FullName": "IProductService",
-    "MethodName": "GetListByCategory",
+    "MethodName": "Add",
     "LogParameters": [
       {
-        "Name": "categoryId",
-        "Value": 1,
-        "Type": "Int32"
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AKURA",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
       }
-    ]
+    ],
+    "DateTime": "16/04/2020 21:56:21"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AHLAT AGACI",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 21:56:50"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AHLAT AGACI",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 21:56:55"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AHLAT AGACI",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 22:24:16"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AGORO",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 22:24:41"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "AGORO",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 22:24:44"
+  }
+}
+{
+  "Message": {
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "DANOR",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 22:50:29"
+  }
+}
+{
+  "Message": {
+    "ExceptionMessage": "Validation failed: \r\n -- ProductName: The specified condition was not met for 'Product Name'.",
+    "FullName": "IProductService",
+    "MethodName": "Add",
+    "LogParameters": [
+      {
+        "Name": "product",
+        "Value": {
+          "ProductId": 0,
+          "ProductName": "DANOR",
+          "CategoryId": 1,
+          "QuantityPerUnit": null,
+          "UnitPrice": 100.0,
+          "UnitsInStock": 0
+        },
+        "Type": "Product"
+      }
+    ],
+    "DateTime": "16/04/2020 22:50:29"
   }
 }

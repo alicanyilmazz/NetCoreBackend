@@ -33,6 +33,8 @@
 
         public static string AuthorizationDenied = "Authorization denied.";
 
+        public static string ProductNameAlreadyExist = "Product name already exist.";
+
 
     }
 }

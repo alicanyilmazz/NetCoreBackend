@@ -2,6 +2,8 @@
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Abstract.EntityServices;
+using Business.BusinessRules.ProductManager.Abstract;
+using Business.BusinessRules.ProductManager.Concrete;
 using Business.Concrete;
 using Business.Concrete.EntityManagers;
 using Castle.DynamicProxy;
@@ -27,6 +29,8 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+            builder.RegisterType<ProductManagerRule>().As<IProductManagerRule>();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

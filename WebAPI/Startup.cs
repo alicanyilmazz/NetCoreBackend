@@ -61,6 +61,8 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.ConfigureCustomExceptionMiddleware(); //This Middleware using Exception Handling for frontend
+
             app.UseCors(builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader());
 
             app.UseHttpsRedirection();

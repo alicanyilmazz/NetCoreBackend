@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Text;
 using Castle.DynamicProxy;
 using Core.CrossCuttingConcerns.Logging;
@@ -9,39 +7,43 @@ using Core.CrossCuttingConcerns.Logging.Log4Net;
 using Core.Utilities.Interceptors.Autofac;
 using Core.Utilities.Messages.AspectMessages;
 
-namespace Core.Aspects.Autofac.Logging
+namespace Core.Aspects.Autofac.Exception
 {
-    public class LogAspect : MethodInterception
+    public class ExceptionLogAspect : MethodInterception
     {
         private LoggerServiceBase _loggerServiceBase;
-        public LogAspect(Type loggerService)
+
+        public ExceptionLogAspect(Type loggerService)
         {
             if (loggerService.BaseType != typeof(LoggerServiceBase))
             {
                 throw new System.Exception(AspectMessage.WrongLoggerType);
             }
+
             _loggerServiceBase = (LoggerServiceBase)Activator.CreateInstance(loggerService);
         }
-
-        protected override void OnBefore(IInvocation invocation)
+        protected override void OnException(IInvocation invocation, System.Exception e)
         {
-            _loggerServiceBase.Info(GetLogDetail(invocation));
+            LogDetailWithException logDetailWithException = GetLogDetail(invocation);
+            logDetailWithException.ExceptionMessage = e.Message;
+            _loggerServiceBase.Error(logDetailWithException);
         }
 
-        private LogDetail GetLogDetail(IInvocation invocation) // invocation equals to method
+        private LogDetailWithException GetLogDetail(IInvocation invocation)
         {
             var logParameters = new List<LogParameter>();
+
             for (int i = 0; i < invocation.Arguments.Length; i++)
             {
                 logParameters.Add(new LogParameter
                 {
-                    Name = invocation.GetConcreteMethod().GetParameters()[i].Name, // Sample : categoryId (Parameter Name)
+                    Name = invocation.GetConcreteMethod().GetParameters()[i].Name,
                     Value = invocation.Arguments[i],
                     Type = invocation.Arguments[i].GetType().Name
                 });
             }
 
-            var logDetail = new LogDetail
+            var logDetailWithException = new LogDetailWithException
             {
                 FullName = invocation.Method.DeclaringType == null ? null : invocation.Method.DeclaringType.Name,
                 MethodName = invocation.Method.Name,
@@ -49,7 +51,7 @@ namespace Core.Aspects.Autofac.Logging
                 DateTime = DateTime.Now.ToString("G")
             };
 
-            return logDetail;
+            return logDetailWithException;
         }
     }
 }

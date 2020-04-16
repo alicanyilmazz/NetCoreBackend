@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using Business.Abstract.EntityServices;
 using Business.BusinessAspect.Autofac;
+using Business.BusinessRules.ProductManager.Abstract;
 using Business.Contants.ResultContants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
@@ -11,6 +12,7 @@ using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -21,10 +23,12 @@ namespace Business.Concrete.EntityManagers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        private IProductManagerRule _productManagerRule;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IProductManagerRule productManagerRule)
         {
             _productDal = productDal;
+            _productManagerRule = productManagerRule;
         }
 
         public IDataResult<Product> GetById(int productId)
@@ -51,6 +55,11 @@ namespace Business.Concrete.EntityManagers
         [LogAspect(typeof(FileLogger))]
         public IResult Add(Product product)
         {
+            IResult result = Core.Utilities.Business.BusinessRules.Run(_productManagerRule.CheckIfProductNameExist(product.ProductName));
+            if (result != null)
+            {
+                return result;
+            }
             _productDal.Add(product);
             return new SuccessResult(ResultMessages.ProductAdded);
         }
